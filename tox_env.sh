@@ -19,9 +19,16 @@ hgme buildbotcustom
 hgme buildbot
 hgme braindump
 
+echo "1: Done hgme"
 hg -R "${TOX_WORK_DIR}/buildbot" checkout production-0.8
+echo "2: Done buildbot checkout"
 cd "${TOX_WORK_DIR}/buildbot/master" && python setup.py install
+echo "3: Done setup.py install"
 rm -rf "${TOX_INI_DIR}/test-output"
+echo "4: Done removal of test-output"
 rm -rf "${TOX_INI_DIR}/run/shm/buildbot"
+echo "5: Done removing shm/buildbot"
 mkdir -p "${TOX_INI_DIR}/run/shm/buildbot"
+echo "6: Done recreating shm/buildbot"
 cd ${TOX_INI_DIR} && "${TOX_WORK_DIR}/braindump/buildbot-related/dump_allthethings.sh"
+echo "7: Done dumping all the things"
