@@ -160,6 +160,8 @@ class MasterConfig:
 
 def load_masters_json(masters_json, role=None, universal=False, log=None,
                       dedupe=True, ignored_roles=[]):
+    print("Hi Francis, I'm in load_masters_json rn.")
+
     if 'http' in masters_json:
         masters = json.load(urllib.urlopen(masters_json))
     else:
@@ -293,6 +295,8 @@ def load_masters_json(masters_json, role=None, universal=False, log=None,
             c.globs.append('config_seta.py')
 
         retval.append(c)
+
+
     return retval
 
 
