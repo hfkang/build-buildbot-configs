@@ -253,7 +253,7 @@ def load_masters_json(masters_json, role=None, universal=False, log=None,
                      ]
                 )
             else:
-                c.globs.append('release-firefox*.py')
+                c.globs.append('release-firefox-mozilla-esr45.py')
                 c.globs.append('release-fennec*.py')
                 c.globs.append('release-thunderbird*.py')
             c.globs.append(mastercfg)
