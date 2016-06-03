@@ -241,7 +241,7 @@ def load_masters_json(masters_json, role=None, universal=False, log=None,
                 c.local_links.extend(
                     [('staging_release-firefox-mozilla-%s.py' % v,
                       'release-firefox-mozilla-%s.py' % v)
-                     for v in ['beta', 'release', 'esr45']
+                     for v in ['esr45']
                      ] +
                     [('staging_release-fennec-mozilla-%s.py' % v,
                       'release-fennec-mozilla-%s.py' % v)
@@ -279,7 +279,7 @@ def load_masters_json(masters_json, role=None, universal=False, log=None,
         elif m['role'] == 'scheduler':
             if 'build_scheduler' in m['name']:
                 c.config_dir = 'mozilla'
-                c.globs.append('release-firefox*.py')
+                c.globs.append('release-firefox-mozilla-esr45.py')
                 c.globs.append('release-fennec*.py')
                 c.globs.append('release-thunderbird*.py')
                 c.globs.append('release_templates')
