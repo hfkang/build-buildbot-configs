@@ -241,7 +241,7 @@ def load_masters_json(masters_json, role=None, universal=False, log=None,
                 # release-*.py -> staging_release-*.py symlinks
                 c.local_links.extend(
                     [('staging_release-firefox-mozilla-%s.py' % v,
-                      'release-firefox-mozilla-%s.py' % v)
+                      'release-firefox-mozilla-%s.pymozilla-aurora' % v)
                      for v in ['esr45']
                      ] +
                     [('staging_release-fennec-mozilla-%s.py' % v,
@@ -377,6 +377,7 @@ if __name__ == "__main__":
     assert len(master_list) > 0, "No masters specified. Bad role?"
 
     if options.list or options.test:
+
         if len(args) > 0:
             wanted = set(args)
             available = set([m.name for m in master_list])

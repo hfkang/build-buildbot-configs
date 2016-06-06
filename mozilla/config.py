@@ -2217,13 +2217,13 @@ apply_localconfig(BRANCH_PROJECTS, localconfig.BRANCH_PROJECTS)
 BRANCHES = {
     'mozilla-central': {
         'merge_builds': False,
-    },
+    }, '''
     'mozilla-release': {
-        'merge_builds': False,
+        'merge_builds': False,                                      #06/06/16: Try removing moz-rel and moz-beta heree
     },
     'mozilla-beta': {
         'merge_builds': False,
-    },
+    }, '''
     'mozilla-aurora': {
         'merge_builds': False,
     },
@@ -2398,6 +2398,7 @@ BRANCHES['mozilla-central']['platforms']['android-api-15']['nightly_signing_serv
 BRANCHES['mozilla-central']['platforms']['macosx64']['nightly_signing_servers'] = 'nightly-signing'
 BRANCHES['mozilla-central']['l10n_extra_configure_args'] = ['--with-macbundlename-prefix=Firefox']
 
+'''
 ######## mozilla-release
 BRANCHES['mozilla-release']['repo_path'] = 'releases/mozilla-release'
 BRANCHES['mozilla-release']['update_channel'] = 'release'
@@ -2609,6 +2610,7 @@ BRANCHES['mozilla-beta']['partner_repack_config'] = {
     # TODO - add fennec support
     # 'fennec': {}
 }
+'''
 ###
 
 ######## mozilla-aurora
@@ -2888,7 +2890,7 @@ for name, branch in items_before(BRANCHES, 'gecko_version', mc_gecko_version):
         del branch['platforms']['macosx64-st-an-debug']
 
 # Only test pretty names on train branches, not m-c or project branches.
-for branch in ("mozilla-aurora", "mozilla-beta", "mozilla-release",
+for branch in ("mozilla-aurora",
                "mozilla-esr45"):
     for platform in ("linux", "linux64", "macosx64", "win32", "win64"):
         if platform in BRANCHES[branch]['platforms']:
