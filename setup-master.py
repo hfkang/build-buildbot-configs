@@ -241,7 +241,7 @@ def load_masters_json(masters_json, role=None, universal=False, log=None,
                 # release-*.py -> staging_release-*.py symlinks
                 c.local_links.extend(
                     [('staging_release-firefox-mozilla-%s.py' % v,
-                      'release-firefox-mozilla-%s.pymozilla-aurora' % v)
+                      'release-firefox-mozilla-%s.py' % v)
                      for v in ['esr45']
                      ] +
                     [('staging_release-fennec-mozilla-%s.py' % v,
