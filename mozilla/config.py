@@ -2398,7 +2398,7 @@ BRANCHES['mozilla-central']['platforms']['android-api-15']['nightly_signing_serv
 BRANCHES['mozilla-central']['platforms']['macosx64']['nightly_signing_servers'] = 'nightly-signing'
 BRANCHES['mozilla-central']['l10n_extra_configure_args'] = ['--with-macbundlename-prefix=Firefox']
 
-'''
+
 ######## mozilla-release
 BRANCHES['mozilla-release']['repo_path'] = 'releases/mozilla-release'
 BRANCHES['mozilla-release']['update_channel'] = 'release'
@@ -2610,7 +2610,7 @@ BRANCHES['mozilla-beta']['partner_repack_config'] = {
     # TODO - add fennec support
     # 'fennec': {}
 }
-'''
+
 ###
 
 ######## mozilla-aurora
