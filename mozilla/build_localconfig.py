@@ -58,6 +58,12 @@ ACTIVE_MOBILE_RELEASE_BRANCHES = []
 ENABLE_RELEASES = False
 if 'release_branches' in master_config:
     ACTIVE_RELEASE_BRANCHES.extend(master_config['release_branches'])
+    ### This is to remove the release branches handled by release promotion
+    for release_promotion_branch in ('mozilla-beta','mozilla-release'):
+        if release_promotion_branch in ACTIVE_RELEASE_BRANCHES:
+            ACTIVE_RELEASE_BRANCHES.remove(release_promotion_branch)
+
+
     ENABLE_RELEASES = True
 if 'thunderbird_release_branches' in master_config:
     ACTIVE_THUNDERBIRD_RELEASE_BRANCHES.extend(master_config['thunderbird_release_branches'])

@@ -2217,13 +2217,13 @@ apply_localconfig(BRANCH_PROJECTS, localconfig.BRANCH_PROJECTS)
 BRANCHES = {
     'mozilla-central': {
         'merge_builds': False,
-    }, '''
+    },
     'mozilla-release': {
-        'merge_builds': False,                                      #06/06/16: Try removing moz-rel and moz-beta heree
+        'merge_builds': False,
     },
     'mozilla-beta': {
         'merge_builds': False,
-    }, '''
+    },
     'mozilla-aurora': {
         'merge_builds': False,
     },
@@ -2890,8 +2890,7 @@ for name, branch in items_before(BRANCHES, 'gecko_version', mc_gecko_version):
         del branch['platforms']['macosx64-st-an-debug']
 
 # Only test pretty names on train branches, not m-c or project branches.
-for branch in ("mozilla-aurora",
-               "mozilla-esr45"):
+for branch in ("mozilla-aurora", "mozilla-esr45"):
     for platform in ("linux", "linux64", "macosx64", "win32", "win64"):
         if platform in BRANCHES[branch]['platforms']:
             BRANCHES[branch]['platforms'][platform]['test_pretty_names'] = True
