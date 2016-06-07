@@ -32,8 +32,8 @@ TALOS_TP_NEW_OPTS = {'plugins': {'32': 'zips/flash32_10_3_183_5.zip', '64':
 BRANCHES = {
     'mozilla-central':     {},
     'mozilla-aurora':      {},
-    #'mozilla-release':     {},
-    #'mozilla-beta':        {},
+    'mozilla-release':     {},
+    'mozilla-beta':        {},
     'mozilla-esr45': {
         'gecko_version': 45,
         'platforms': {
@@ -2876,7 +2876,6 @@ BRANCHES['mozilla-central']['repo_path'] = "mozilla-central"
 BRANCHES['mozilla-central']['build_branch'] = "1.9.2"
 BRANCHES['mozilla-central']['pgo_strategy'] = 'periodic'
 
-'''
 ######### mozilla-release
 BRANCHES['mozilla-release']['repo_path'] = "releases/mozilla-release"
 BRANCHES['mozilla-release']['pgo_strategy'] = 'per-checkin'
@@ -2889,7 +2888,6 @@ BRANCHES['mozilla-release']['platforms']['win64']['talos_slave_platforms'] = []
 ######### mozilla-beta
 BRANCHES['mozilla-beta']['repo_path'] = "releases/mozilla-beta"
 BRANCHES['mozilla-beta']['pgo_strategy'] = 'per-checkin'
-'''
 
 ######### mozilla-aurora
 BRANCHES['mozilla-aurora']['repo_path'] = "releases/mozilla-aurora"
