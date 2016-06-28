@@ -14,6 +14,7 @@ import urllib
 import tempfile
 import sys
 import logging
+
 try:
     import simplejson as json
     assert json
@@ -295,9 +296,7 @@ def load_masters_json(masters_json, role=None, universal=False, log=None,
         retval.append(c)
     return retval
 
-
-if __name__ == "__main__":
-
+def main():
     from optparse import OptionParser
 
     parser = OptionParser(__doc__)
@@ -416,7 +415,11 @@ if __name__ == "__main__":
             log.error("Unknown master %s" % master_name)
 
         m = master_map[master_name]
-        m.createMaster(master_dir, options.buildbot)
+        logfile = "/home/vagrant/bbconfigs/logs/"+master_name
+        m.createMaster(master_dir, options.buildbot,logfile=logfile)
     else:
         parser.print_usage()
         parser.exit()
+
+if __name__ == '__main__':
+    main()
