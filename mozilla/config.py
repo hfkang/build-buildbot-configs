@@ -94,7 +94,7 @@ GLOBAL_VARS = {
     'file_update_set_approval': True,
     'enable_nightly': True,
     'enabled_products': ['firefox', 'mobile'],
-    'enable_valgrind': True,
+    'enable_valgrind': False,
     'valgrind_platforms': ('linux64',),
 
     # List of keys in BRANCH_PROJECTS that will be activated for the BRANCH
