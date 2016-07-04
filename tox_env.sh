@@ -15,9 +15,19 @@ function hgme {
 }
 
 hgme tools
-hgme buildbotcustom
+#hgme buildbotcustom
 hgme buildbot
 hgme braindump
+
+repo="buildbotcustom"
+if [ ! -d "${TOX_WORK_DIR}/${repo}" ]; then
+    git clone https://github.com/hfkang/build-buildbotcustom ${TOX_WORK_DIR}/buildbotcustom
+else
+    # this is equivalent to hg purge but doesn't require the hg purge plugin to be enabled
+    git -C "${TOX_WORK_DIR}/${repo}" pull
+fi
+
+
 
 hg -R "${TOX_WORK_DIR}/buildbot" checkout production-0.8
 cd "${TOX_WORK_DIR}/buildbot/master" && python setup.py install
